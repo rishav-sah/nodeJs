@@ -1,9 +1,8 @@
+//Accessing REPL
 const repl = require('repl');
+
+//Exposing a variable to the REPL explicitly by assigning the context object associated with each REPLServer.
+
 const msg = 'message';
 
-const r = repl.start('> ');
-Object.defineProperty(r.context, 'm', {
-  configurable: false,
-  enumerable: true,
-  value: msg
-});
+repl.start('> ').context.m = msg;
